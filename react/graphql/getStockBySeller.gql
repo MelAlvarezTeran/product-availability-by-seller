@@ -1,0 +1,12 @@
+query getStockBySeller($sku: String!) {
+  getStockBySeller(sku: $sku)
+    @context(provider: "vtexarg.service-availability-by-seller") {
+    vtexAccount
+    sellerid
+    skuId
+    balance {
+      warehouseName
+      totalQuantity
+    }
+  }
+}
